@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/jonathan_new.unity
+    guid: 3dd0a97be9b784e3b8839ed0707e1f96
+  - enabled: 1
+    path: Assets/Scenes/Andrew_world/Triangle_World_Start.unity
+    guid: fbd390089b4ba46eeafeb8d2eaab9855
+  - enabled: 1
+    path: Assets/Scenes/Sabrina_World/sabrina.unity
+    guid: 0875e98aa86694f99931e8c60e8d4e45
+  - enabled: 1
+    path: Assets/Scenes/Marvin_World/MarvinScene.unity
+    guid: 62a126b5c7199184e916922c3366094b
+  - enabled: 0
+    path: Assets/Scenes/CJ_World/Level.unity
+    guid: 8004d7bf8c185da418228c57909270e7
+  - enabled: 1
+    path: Assets/CJ's Assets/Scenes/Level-2.unity
+    guid: 34a7ed66c6bb84cca9fd36d38fe3e775
+  - enabled: 1
+    path: Assets/CJ's Assets/Scenes/Level-3.unity
+    guid: dffb06cb2cbf64dfdbb21682f0ebf4e8
+  - enabled: 1
+    path: Assets/CJ's Assets/Scenes/Level-4.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/CJ's Assets/Scenes/Level-5.unity
+    guid: ab241c436101e4281beccecca6048b9b
+  m_configObjects: {}
