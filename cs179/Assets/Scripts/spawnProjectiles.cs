@@ -17,9 +17,9 @@ public class spawnProjectiles : MonoBehaviour
 
     }
 
-    void Update()   
+    void Update()
     {
-        if(startSpawn == true)
+        if (startSpawn == true)
         {
             Debug.Log("HERE");
             timer += Time.deltaTime;
