@@ -19,7 +19,7 @@ public class spawnProjectiles : MonoBehaviour
 
     }
 
-    void Update()   
+    void Update()
     {
         timer2 += Time.deltaTime;
         if(startSpawn == true && timer2 < waitTime2)

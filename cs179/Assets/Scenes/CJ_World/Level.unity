@@ -9126,7 +9126,7 @@ GameObject:
   - component: {fileID: 1136275126}
   - component: {fileID: 1136275125}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9354,7 +9354,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1170530676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02960af10b0e6404d97f0421026a520b, type: 3}
+  m_Script: {fileID: 11500000, guid: 060f7b2c7a4b94a91b71d848769c2b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 1136275124}
@@ -11522,18 +11522,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.9774768
       objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.78
@@ -11543,6 +11531,18 @@ PrefabInstance:
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 2f467e5eb776e1a498369e054db7136f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}

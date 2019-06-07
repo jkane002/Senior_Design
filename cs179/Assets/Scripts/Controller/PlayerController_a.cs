@@ -4,22 +4,35 @@ using UnityEngine.UI;
 
 public class PlayerController_a : MonoBehaviour
 {
-
+    
     public float speed;
-    public Text countText;
 
+    public Camera cam;
     public bool hasKey = false;
+    public float radius = 3f;
 
-    private int count;
+    public PlayerManager pm;
 
-    public 
-
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
 
     void Start()
     {
-        speed *= .125f;
-        count = 0;
-        setCountText();
+        //setCountText();
+        pm.GetComponent<PlayerManager>();
+    }
+
+    private void Update()
+    {
+        //Debug.Log("Health: + " + pm.Health);
+        if(pm.Health < 0)
+        {
+            pm.GameOver();
+            //Debug.Log("Health = 0");
+        }
     }
 
     void FixedUpdate()
@@ -29,23 +42,25 @@ public class PlayerController_a : MonoBehaviour
 
     void Movement()
     {
+        //Get Horizontal and Vertical Movement
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        transform.position += movement * speed;
+        //camera forward and right vectors:
+        Vector3 forward = cam.transform.forward;
+        Vector3 right = cam.transform.right;
 
-        //transform.rotation = Quaternion.LookRotation(transform.right * -1f); //look left
+        //project forward and right vectors on the horizontal plane (y = 0)
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            transform.rotation = Quaternion.LookRotation(transform.right); //look right
-        }
+        //this is the direction in the world space we want to move:
+        Vector3 desiredMoveDirection = forward * moveVertical + right * moveHorizontal;
 
-        if (Input.GetKeyDown("space"))
-        {
-            //rb.AddForce(jump * jumpheight);
-        }
+        //now we can apply the movement:
+        transform.Translate(desiredMoveDirection * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -53,55 +68,36 @@ public class PlayerController_a : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-            count++;
-            setCountText();
+            pm.score++;
         }
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            this.gameObject.SetActive(false);
-
-            GameOver();
-
+            pm.Health -= 10;
         }
+        if(other.gameObject.CompareTag("Bullet"))
+        {
+            pm.Health -= 5;
+        }
+
+        if (other.gameObject.tag == "Key")
+        {
+            hasKey = true;
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.tag == "Door")
+        {
+            if (hasKey)
+            {
+                Debug.Log("Door Opens");
+            }
+            else
+            {
+                Debug.Log("Door does not open");
+            }
+        }
+
     }
-
-    void setCountText()
-    {
-        countText.text = "Score: " + count.ToString();
-    }
-
-    [SerializeField] private GameObject gameOverUI;
-    void GameOver()
-    {
-        gameOverUI.SetActive(true);
-    }
-    //public float speed;
-    //public float jumpheight = 10.0f;
-
-    //private Rigidbody rb;
-
-    //void Start()
-    //{
-    //    rb = GetComponent<Rigidbody>();
-    //}
-
-    //void FixedUpdate()
-    //{
-    //    float moveHorizontal = Input.GetAxis("Horizontal");
-    //    float moveVertical = Input.GetAxis("Vertical");
-
-    //    Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-    //    Vector3 jump = new Vector3(0.0f, 10.0f, 0.0f);
-
-    //    movement = GameObject.Find("Main Camera").transform.TransformDirection(movement);
-
-    //    rb.AddForce(movement * speed);
-
-    //    if (Input.GetKeyDown("space"))
-    //    {
-    //        rb.AddForce(jump * jumpheight);
-    //    }
-    //}
 
 }
