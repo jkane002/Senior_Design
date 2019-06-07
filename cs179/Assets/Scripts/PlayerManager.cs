@@ -42,22 +42,25 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        pauseMenuUI = GameObject.Find("Canvas/PauseMenu");
-        gameOverMenuUI = GameObject.Find("Canvas/GameOver");
+        pauseMenuUI = GameObject.Find("GUI/PauseMenu");
+        gameOverMenuUI = GameObject.Find("GUI/GameOver");
         player = GameObject.FindWithTag("Player");
-        timerText = GameObject.Find("Canvas/Time").GetComponent<Text>();
-        countText = GameObject.Find("Canvas/Score").GetComponent<Text>();
+        timerText = GameObject.Find("GUI/Time").GetComponent<Text>();
+        countText = GameObject.Find("GUI/Score").GetComponent<Text>();
         pauseMenuUI.SetActive(false);
         gameOverMenuUI.SetActive(false);
 
         startTime = Time.time;
+        Health = 100;
+        bar_display = Health;
+        currentStyle = null;
 
     }
 
     private void Update()
     {
         bar_display = Health;
-        Debug.Log("Bar disaply " + bar_display);
+        Debug.Log("Health " + Health);
         time();
         setCountText();
 
@@ -126,13 +129,13 @@ public class PlayerManager : MonoBehaviour
 
     void OnGUI()
     {
-        InitStyles();
-        GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
-            GUI.Box(new Rect(0, 0, size.x, size.y), emptyTex);
-            GUI.BeginGroup(new Rect(0, 0, size.x * (bar_display * .01f), size.y),currentStyle);
-                GUI.Box(new Rect(0, 0, size.x, size.y), fullTex);
-            GUI.EndGroup();
-        GUI.EndGroup();
+        //InitStyles();
+        //GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
+        //    GUI.Box(new Rect(0, 0, size.x, size.y), emptyTex);
+        //    GUI.BeginGroup(new Rect(0, 0, size.x * (bar_display * .01f), size.y),currentStyle);
+        //        GUI.Box(new Rect(0, 0, size.x, size.y), fullTex);
+        //    GUI.EndGroup();
+        //GUI.EndGroup();
     }
 
     private void InitStyles()

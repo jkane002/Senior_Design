@@ -12,6 +12,7 @@ public class camPivoter : MonoBehaviour
     //private Rigidbody rb;
 
     Vector2 input;
+    public PlayerManager pm;
     /*
     void Start()
     {
@@ -44,6 +45,7 @@ public class camPivoter : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         {
             other.gameObject.SetActive(false);
+            pm.score = pm.score + 1;
             //score = score + 1;
             //SetScoreText();
         }

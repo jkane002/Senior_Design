@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController_a : MonoBehaviour
 {
@@ -73,11 +74,13 @@ public class PlayerController_a : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            pm.Health -= 10;
+            //pm.Health -= 10;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if(other.gameObject.CompareTag("Bullet"))
         {
-            pm.Health -= 5;
+            //pm.Health -= 5;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (other.gameObject.tag == "Key")

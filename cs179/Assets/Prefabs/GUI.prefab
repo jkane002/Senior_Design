@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1363455093677223075}
   - component: {fileID: 1363455093677223074}
   m_Layer: 5
-  m_Name: Canvas 1
+  m_Name: GUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 7203280895905677754, guid: 1a06e1f1ba6be46d286efa58956bddf4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7203280895905677755, guid: 1a06e1f1ba6be46d286efa58956bddf4,
         type: 3}
@@ -354,20 +354,38 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7203280895661211116, guid: 1a06e1f1ba6be46d286efa58956bddf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8001323847390930430, guid: 7e0b439b304314b5791d3904ac5dbdfc,
+        type: 3}
+    - target: {fileID: 7203280895661211116, guid: 1a06e1f1ba6be46d286efa58956bddf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     - target: {fileID: 7203280895818551842, guid: 1a06e1f1ba6be46d286efa58956bddf4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 8001323847390930430, guid: 7e0b439b304314b5791d3904ac5dbdfc,
+        type: 3}
+    - target: {fileID: 7203280895818551842, guid: 1a06e1f1ba6be46d286efa58956bddf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeActivateMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7203280894486966269, guid: 1a06e1f1ba6be46d286efa58956bddf4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7203280895661211116, guid: 1a06e1f1ba6be46d286efa58956bddf4,
+      objectReference: {fileID: 8001323847390930430, guid: 7e0b439b304314b5791d3904ac5dbdfc,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+    - target: {fileID: 7203280894486966269, guid: 1a06e1f1ba6be46d286efa58956bddf4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a06e1f1ba6be46d286efa58956bddf4, type: 3}
@@ -514,6 +532,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOver
       objectReference: {fileID: 0}
+    - target: {fileID: 7617802088180652914, guid: fdea4a7d9e9c94fefab511edf2d5a208,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7617802088180652913, guid: fdea4a7d9e9c94fefab511edf2d5a208,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -619,15 +642,27 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7617802088308930997, guid: fdea4a7d9e9c94fefab511edf2d5a208,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7617802087240145907, guid: fdea4a7d9e9c94fefab511edf2d5a208,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 8001323847390930430, guid: 7e0b439b304314b5791d3904ac5dbdfc,
+        type: 3}
+    - target: {fileID: 7617802087240145907, guid: fdea4a7d9e9c94fefab511edf2d5a208,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617802088308930997, guid: fdea4a7d9e9c94fefab511edf2d5a208,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8001323847390930430, guid: 7e0b439b304314b5791d3904ac5dbdfc,
+        type: 3}
+    - target: {fileID: 7617802088308930997, guid: fdea4a7d9e9c94fefab511edf2d5a208,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdea4a7d9e9c94fefab511edf2d5a208, type: 3}

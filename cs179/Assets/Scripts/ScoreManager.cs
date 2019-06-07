@@ -7,31 +7,38 @@ public class ScoreManager : MonoBehaviour
 
     public Text scoreText;
     public Text winText;
+    public PlayerManager pm;
 
-    public int score;
+    private int s;
 
     void Start()
     {
 
-        SetScoreText();
-        winText.text = "";
 
+        s = 0;
+        winText.text = "";
+        SetScoreText();
+        //if(s > 20)
+        //{
+        //    SetScoreText();
+        //}
+
+    }
+    void Update()
+    {
+        Debug.Log("s: " + s);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hit");
-        if (other.gameObject.CompareTag("Cube"))
-        {
-            Debug.Log("hit");
-            score = score - 1;
-            SetScoreText();
-        }
+
 
         if (other.gameObject.CompareTag("Pickup"))
         {
             other.gameObject.SetActive(false);
-            score = score + 1;
+            pm.score = pm.score + 1;
+            //pm.Health = pm.Health + 5;
+            s = s + 1;
             SetScoreText();
         }
 
@@ -40,8 +47,8 @@ public class ScoreManager : MonoBehaviour
 
     void SetScoreText()
     {
-        scoreText.text = "Score: " + score.ToString() + "/20";
-        if (score >= 20)
+        //scoreText.text = "Score: " + score.ToString() + "/20";
+        if (s >= 20)
         {
             winText.text = "You collected all of the hearts!";
         }

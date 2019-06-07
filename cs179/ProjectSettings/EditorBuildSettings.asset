@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/jonathan_new.unity
-    guid: 3dd0a97be9b784e3b8839ed0707e1f96
+    path: Assets/Scenes/Menu.unity
+    guid: 7e4b892a5ca314203bfd992c3f0c9b4c
+  - enabled: 1
+    path: Assets/jonathan_0606.unity
+    guid: 4500e7db5cc0c48f3879691a221c9429
   - enabled: 1
     path: Assets/Scenes/Andrew_world/Triangle_World_Start.unity
     guid: fbd390089b4ba46eeafeb8d2eaab9855
@@ -18,12 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Marvin_World/MarvinScene.unity
     guid: 62a126b5c7199184e916922c3366094b
   - enabled: 1
-    path: Assets/Scenes/Marvin_World/Marvin Boss.unity
-    guid: 53dedabf1e04626429f7af714f3d325f
-  - enabled: 0
-    path: Assets/Scenes/CJ_World/Level.unity
-    guid: 8004d7bf8c185da418228c57909270e7
-  - enabled: 1
     path: Assets/CJ's Assets/Scenes/Level-2.unity
     guid: 34a7ed66c6bb84cca9fd36d38fe3e775
   - enabled: 1
@@ -32,7 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CJ's Assets/Scenes/Level-4.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/CJ's Assets/Scenes/Level-5.unity
-    guid: ab241c436101e4281beccecca6048b9b
+  - enabled: 1
+    path: Assets/Scenes/Marvin_World/Marvin Boss.unity
+    guid: 53dedabf1e04626429f7af714f3d325f
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: bc0660f2706e6419db788945b6d7b2e3
   m_configObjects: {}

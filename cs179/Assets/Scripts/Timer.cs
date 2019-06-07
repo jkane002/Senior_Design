@@ -17,40 +17,40 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (finished)
-            return;
+        //if (finished)
+        //    return;
 
-        float t = Time.time - startTime;
+        //float t = Time.time - startTime;
 
-        string minutes = ((int)t / 60).ToString();
-        string seconds;
+        //string minutes = ((int)t / 60).ToString();
+        //string seconds;
 
-        if (minutes == "0")
-        {   
-            seconds = (t % 60).ToString("f1");
-            timerText.text = seconds + "s";
-        }
-        else
-        {
-            seconds = (t % 60).ToString("f0");
+        //if (minutes == "0")
+        //{   
+        //    seconds = (t % 60).ToString("f1");
+        //    timerText.text = seconds + "s";
+        //}
+        //else
+        //{
+        //    seconds = (t % 60).ToString("f0");
 
-            if(t % 60 <= 9)
-            {
-                seconds = '0' + seconds;
-            }
-            timerText.text = minutes + "." + seconds;
-        }
+        //    if(t % 60 <= 9)
+        //    {
+        //        seconds = '0' + seconds;
+        //    }
+        //    timerText.text = minutes + "." + seconds;
+        //}
     }
 
-    public void Finished()
-    {
-        finished = true;
-        timerText.color = Color.yellow;
-    }
+    //public void Finished()
+    //{
+    //    finished = true;
+    //    timerText.color = Color.yellow;
+    //}
 
-    public void GameOver()
-    {
-        finished = true;
-        timerText.color = Color.red;
-    }
+    //public void GameOver()
+    //{
+    //    finished = true;
+    //    timerText.color = Color.red;
+    //}
 }

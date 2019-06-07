@@ -18,4 +18,12 @@ public class CollectableRotation : MonoBehaviour
         //transform.position += new Vector3(1, 0, 0);
         transform.Rotate(new Vector3(0, 30, 0) * Time.deltaTime);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 }

@@ -8,6 +8,7 @@ public class switchScene : MonoBehaviour
 {
     public Text winText;
     private string sceneName;
+    public PlayerController_a pa;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +20,18 @@ public class switchScene : MonoBehaviour
         //SceneManager.LoadScene(sceneName: "MarvinScene");
 
         switch(sceneName) {
-            case "jonathan_new":
+            case "jonathan_0606":
             {
                 SceneManager.LoadScene(sceneName: "Triangle_World_Start");
                 break;
             }
             case "Triangle_World_Start":
             {
-                SceneManager.LoadScene(sceneName: "sabrina");
+                if(pa.hasKey == true)
+                    {
+                        SceneManager.LoadScene(sceneName: "sabrina");
+                    }
+
                 break;
             }
             case "sabrina":
@@ -39,12 +44,12 @@ public class switchScene : MonoBehaviour
             }
             case "MarvinScene":
             {
-                SceneManager.LoadScene(sceneName: "Marvin Boss");
+                SceneManager.LoadScene(sceneName: "Level-2");
                 break;
             }
             case "Marvin Boss":
             {
-                SceneManager.LoadScene(sceneName: "Level-2");
+                SceneManager.LoadScene(sceneName: "End");
                 break;
             }
             //case "Level":
@@ -63,7 +68,7 @@ public class switchScene : MonoBehaviour
             }
             case "Level-4":
             {
-                Application.Quit();
+                SceneManager.LoadScene(sceneName: "Marvin Boss");
                 break;
             }
             //case "Level-5":
@@ -80,7 +85,7 @@ public class switchScene : MonoBehaviour
     {
         if (Input.GetKeyDown("1"))
         {
-            SceneManager.LoadScene(sceneName: "jonathan_new");
+            SceneManager.LoadScene(sceneName: "jonathan_0606");
         }
         if (Input.GetKeyDown("2"))
         {
@@ -97,6 +102,18 @@ public class switchScene : MonoBehaviour
         if (Input.GetKeyDown("5"))
         {
             SceneManager.LoadScene(sceneName: "Level-2");
+        }
+        if(Input.GetKeyDown("6"))
+        {
+            SceneManager.LoadScene("Level-3");
+        }
+        if (Input.GetKeyDown("7"))
+        {
+            SceneManager.LoadScene("Level-4");
+        }
+        if (Input.GetKeyDown("8"))
+        {
+            SceneManager.LoadScene("Marvin Boss");
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class destroyer : MonoBehaviour {
 
     public float lifeTime = 10f;
-    public ScoreManager score;
+    //public ScoreManager score;
 
     private void Start()
     {
@@ -28,10 +28,7 @@ public class destroyer : MonoBehaviour {
 
     void OnCollisionEnter(Collision coll) {
 
-        if(coll.gameObject.CompareTag("Cube"))
-        {
-            score.score = score.score - 1;
-        }
+       
 
         if (coll.gameObject.name == "destroyer") {
             Destruction();

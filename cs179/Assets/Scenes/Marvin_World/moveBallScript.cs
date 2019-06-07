@@ -11,6 +11,8 @@ public class moveBallScript : MonoBehaviour
 
     Vector2 input;
 
+    public PlayerManager pm;
+
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +29,15 @@ public class moveBallScript : MonoBehaviour
         camR = camR.normalized;
 
         transform.position += ((camF * input.y) + (camR * input.x)) * Time.deltaTime * 10 * multiplier;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Pickup"))
+        {
+            pm.score++;
+            other.gameObject.SetActive(false);
+        }
     }
 
 
