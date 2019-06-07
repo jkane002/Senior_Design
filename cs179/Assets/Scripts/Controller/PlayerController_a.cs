@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerController_a : MonoBehaviour
 {
-    
+
     public float speed;
 
     public Camera cam;
@@ -28,11 +28,11 @@ public class PlayerController_a : MonoBehaviour
     private void Update()
     {
         //Debug.Log("Health: + " + pm.Health);
-        if(pm.Health < 0)
-        {
-            pm.GameOver();
-            //Debug.Log("Health = 0");
-        }
+        //if(pm.Health < 0)
+        //{
+        //    pm.GameOver();
+        //    //Debug.Log("Health = 0");
+        //}
     }
 
     void FixedUpdate()

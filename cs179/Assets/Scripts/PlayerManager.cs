@@ -61,6 +61,11 @@ public class PlayerManager : MonoBehaviour
         time();
         setCountText();
 
+        if(Health < 0)
+        {
+            GameOver();
+        }
+
         if (Input.GetKeyDown("escape"))
         {
             isPaused = !isPaused;
@@ -92,12 +97,20 @@ public class PlayerManager : MonoBehaviour
 
     public void GameOver()
     {
+        Time.timeScale = 0;
+        AudioListener.pause = true;
         gameOverMenuUI.SetActive(true);
+        Health = 100;
     }
 
     public void DeActivateGameOver()
     {
         gameOverMenuUI.SetActive(false);
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        isPaused = false;
+        Health = 100;
+
     }
 
     public void Quit()
@@ -116,7 +129,6 @@ public class PlayerManager : MonoBehaviour
         InitStyles();
         GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
             GUI.Box(new Rect(0, 0, size.x, size.y), emptyTex);
-            //draw the filled-in part:
             GUI.BeginGroup(new Rect(0, 0, size.x * (bar_display * .01f), size.y),currentStyle);
                 GUI.Box(new Rect(0, 0, size.x, size.y), fullTex);
             GUI.EndGroup();
@@ -129,6 +141,12 @@ public class PlayerManager : MonoBehaviour
         {
             currentStyle = new GUIStyle(GUI.skin.box);
             currentStyle.normal.background = MakeTex(2, 2, new Color(0f, 1f, 0f, 0.5f));
+        }
+
+        if(bar_display < 50 && currentStyle != null)
+        {
+            currentStyle = new GUIStyle(GUI.skin.box);
+            currentStyle.normal.background = MakeTex(2, 2, Color.red);
         }
     }
 
