@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class switchScene : MonoBehaviour
 {
+    public Text winText;
     private string sceneName; 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,10 @@ public class switchScene : MonoBehaviour
             }
             case "sabrina":
             {
-                SceneManager.LoadScene(sceneName: "MarvinScene");
+                if(string.Compare(winText.text, "You collected all of the hearts!") == 0) 
+                {
+                    SceneManager.LoadScene(sceneName: "MarvinScene");
+                }
                 break;
             }
             case "MarvinScene":

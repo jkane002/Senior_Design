@@ -10,6 +10,10 @@ TagManager:
   - Bullet
   - Door
   - Key
+  - SpawnPoint
+  - Pickup
+  - Powerup
+  - Misc
   layers:
   - Default
   - TransparentFX

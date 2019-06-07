@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 7012028507679262785}
   - component: {fileID: 7012028507679262787}
   - component: {fileID: 7012028507679262784}
+  - component: {fileID: -3799770865707984326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -192,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  countText: {fileID: 0}
+  forcefield: {fileID: 0}
 --- !u!114 &7012028507679262787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  pc: {fileID: 0}
 --- !u!114 &7012028507679262784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +222,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
   startTime: 0
+--- !u!114 &-3799770865707984326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7012028507679262794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0f8bf14ba924289a4bee10f5934893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  winText: {fileID: 0}
+  score: 0

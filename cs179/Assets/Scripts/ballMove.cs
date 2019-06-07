@@ -4,19 +4,21 @@ using System.Collections;
 
 public class ballMove : MonoBehaviour
 {
-
     public float speed;
-    public Text scoreText;
-    public Text winText;
+    public GameObject forcefield;
 
+    private GameObject[] gameObjectArray;
     private Rigidbody rb;
-    private int score;
+    private bool ffactive;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        SetScoreText();
-        winText.text = "";
+
+        //forcefield stuff
+        gameObjectArray = GameObject.FindGameObjectsWithTag("SpawnPoint");
+        ffactive = false;
+        forcefield.SetActive(false);
     }
 
     void FixedUpdate()
@@ -31,20 +33,38 @@ public class ballMove : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pickup"))
+
+        if (other.gameObject.CompareTag("Powerup"))
         {
             other.gameObject.SetActive(false);
-            score = score + 1;
-            SetScoreText();
+            forcefield.SetActive(true);
+            ffactive = true;
+            StartCoroutine(FF());
+            foreach (GameObject go in gameObjectArray)
+            {
+                go.SetActive(false);
+            }
         }
     }
 
-    void SetScoreText()
+    private IEnumerator FF()
     {
-        scoreText.text = "Score: " + score.ToString() + "/20";
-        if (score >= 20)
+        float countDown = 5f;
+
+        while (countDown >= 0)
         {
-            winText.text = "You collected all of the hearts!";
+            countDown -= Time.smoothDeltaTime;
+            yield return null;
         }
+
+        if (countDown < 0)
+        {
+            forcefield.SetActive(false);
+            foreach (GameObject go in gameObjectArray)
+            {
+                go.SetActive(true);
+            }
+        }
+
     }
 }
