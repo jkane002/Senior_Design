@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ballJump : MonoBehaviour
 {
-    public float jumpHeight;
+    static public float jumpHeight = 60;
     static public bool isGrounded;
     public float GravityStrength;
     Rigidbody rb;

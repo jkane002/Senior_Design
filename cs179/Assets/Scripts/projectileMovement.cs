@@ -20,7 +20,7 @@ public class projectileMovement : MonoBehaviour
         // Move our position a step closer to the target.
         float step = speed * Time.deltaTime; // calculate distance to move
         timeAlive += Time.deltaTime; 
-        if(timeAlive >= 10.0f) { Destroy(gameObject); }
+        if(timeAlive >= 5.0f) { Destroy(gameObject); }
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
 }

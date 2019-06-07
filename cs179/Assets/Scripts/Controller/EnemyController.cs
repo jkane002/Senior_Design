@@ -6,20 +6,16 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10f;
-    public bool Ai = false;
-    public float walkRadius = 5;
-    public bool tree = false;
 
-
+    GameObject spawn;
     private Vector3 startpos;
     Transform target;
     NavMeshAgent agent;
 
-    public GameObject bullet;
-    public GameObject bulletSpawn;
-    public float bulletForwardForce = 2f;
-
-    public bool inRange = false;
+    public float fire_cool_down_period = 2.0f;
+    public bool walk;
+    public bool shoot;
+    bool wait;
 
     // Start is called before the first frame update
     void Start()
@@ -27,37 +23,42 @@ public class EnemyController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         startpos = transform.position;
+
+        spawn = GameObject.Find("Bullet");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!tree)
-        {
-            moveTowardsPlayer();
-        }
         float distance = Vector3.Distance(target.position, transform.position);
-    }
-
-    private void moveTowardsPlayer()
-    {
-        float distance = Vector3.Distance(target.position, transform.position);
-
-        if (distance <= lookRadius)
+        if (distance <= lookRadius && walk)
         {
+            //FacePlayer();
             agent.SetDestination(target.position);
-            //shootAtPlayer();
-            inRange = true;
-        } else
+            if (shoot)
+            {
+                StartCoroutine(ShootCoroutine(fire_cool_down_period));
+            }
+        } else if (!walk && shoot)
         {
-            inRange = false;
+            FacePlayer();
+            if (distance <= lookRadius)
+            {
+                StartCoroutine(ShootCoroutine(fire_cool_down_period));
+            }
         }
     }
-
+    private void FacePlayer()
+    {
+        Vector3 lookVector = target.position - transform.position;
+        lookVector.y = transform.position.y;
+        Quaternion rot = Quaternion.LookRotation(lookVector);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
+    }
     private void MoveForward()
     {
-        if(startpos.x - transform.position.x <= 5)
-            agent.SetDestination(new Vector3(1,0,0));
+        if (startpos.x - transform.position.x <= 5)
+            agent.SetDestination(new Vector3(1f, 0, 0));
     }
 
     private void OnDrawGizmosSelected()
@@ -66,20 +67,20 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 
-    private void shootAtPlayer()
+
+    IEnumerator ShootCoroutine(float i)
     {
-        GameObject tempBulletHandler;
-        tempBulletHandler = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
+        if (wait)
+            yield break;
 
-        //tempBulletHandler.transform.Rotate(Vector3.left * 90);
-
-        Rigidbody tempRigidBody;
-        tempRigidBody = tempBulletHandler.GetComponent<Rigidbody>();
-
-        tempRigidBody.AddForce(transform.forward * bulletForwardForce);
-
-        tempBulletHandler.transform.Translate(new Vector3(1, 0, 0));
-
-        Destroy(tempBulletHandler, 2.0f);
+        wait = true;
+        GameObject b = Instantiate(spawn, transform.position, transform.rotation);
+        b.AddComponent<projectileMovement>();
+        b.GetComponent<projectileMovement>().speed = 7.0f;
+        Destroy(b.gameObject, 1.25f);
+        yield return new WaitForSeconds(i);
+        wait = false;
     }
+
+
 }

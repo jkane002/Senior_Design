@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class switchScene : MonoBehaviour
 {
     public Text winText;
-    private string sceneName; 
+    private string sceneName;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +31,18 @@ public class switchScene : MonoBehaviour
             }
             case "sabrina":
             {
-                if(string.Compare(winText.text, "You collected all of the hearts!") == 0) 
+                if(string.Compare(winText.text, "You collected all of the hearts!") == 0)
                 {
                     SceneManager.LoadScene(sceneName: "MarvinScene");
-                }
-                break;
+                  }
+                  break;
             }
             case "MarvinScene":
+            {
+                SceneManager.LoadScene(sceneName: "Marvin Boss");
+                break;
+            }
+            case "Marvin Boss":
             {
                 SceneManager.LoadScene(sceneName: "Level-2");
                 break;

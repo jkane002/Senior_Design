@@ -28,6 +28,8 @@ public class ballMove : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
+        movement = GameObject.Find("Main Camera").transform.TransformDirection(movement);
+
         rb.AddForce(movement * speed);
     }
 
