@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marvin_World/MarvinScene.unity
     guid: 62a126b5c7199184e916922c3366094b
+  - enabled: 1
+    path: Assets/Scenes/Marvin_World/Marvin Boss.unity
+    guid: 53dedabf1e04626429f7af714f3d325f
   - enabled: 0
     path: Assets/Scenes/CJ_World/Level.unity
     guid: 8004d7bf8c185da418228c57909270e7

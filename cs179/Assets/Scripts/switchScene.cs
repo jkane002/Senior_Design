@@ -34,6 +34,11 @@ public class switchScene : MonoBehaviour
             }
             case "MarvinScene":
             {
+                SceneManager.LoadScene(sceneName: "Marvin Boss");
+                break;
+            }
+            case "Marvin Boss":
+            {
                 SceneManager.LoadScene(sceneName: "Level-2");
                 break;
             }

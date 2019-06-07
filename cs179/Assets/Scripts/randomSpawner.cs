@@ -43,6 +43,8 @@ public class randomSpawner : MonoBehaviour {
         randomInt = GetRandom(spawnees.Length);
         randomIntTwo = GetRandom(spawnPoints.Length);
         randomVec = GetRandomVector(spawnPoints[randomIntTwo].transform.position);
-        Instantiate(spawnees[randomInt], randomVec, spawnPoints[randomIntTwo].transform.rotation);
+        randomVec.y = 10;
+        //Instantiate(spawnees[randomInt], randomVec, spawnPoints[randomIntTwo].transform.rotation);
+        Instantiate(spawnees[randomInt], randomVec, new Quaternion(0.7071f,0, 0, 0.7071f));
     }
 }
