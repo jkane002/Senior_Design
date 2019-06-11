@@ -38,9 +38,10 @@ The hardware that was used in this design is listed below. The equipment that wa
 taught in this course has been bolded.
 * ATMega1284 microcontroller
 * LCD Screen
-__* Joystick__
-__* Four 74HC595 Shift Register__
-__* 8x8 RGB LED Dot Matrix**__
+* 
+* __Joystick__
+* __Four 74HC595 Shift Register__
+* __8x8 RGB LED Dot Matrix__
 
 ### Pinout
 **PORTA ​(Joystick and Photoresistor)**
