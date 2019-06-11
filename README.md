@@ -36,11 +36,11 @@ To go back to the home screen click the joystick again.
 
 The hardware that was used in this design is listed below. The equipment that was not
 taught in this course has been bolded.
-● ATMega1284 microcontroller
-● LCD Screen
-**● Joystick
-● Four 74HC595 Shift Register
-● 8x8 RGB LED Dot Matrix**
+* ATMega1284 microcontroller
+* LCD Screen
+** * Joystick
+* Four 74HC595 Shift Register
+* 8x8 RGB LED Dot Matrix**
 
 ### Pinout
 **PORTA ​(Joystick and Photoresistor)**
