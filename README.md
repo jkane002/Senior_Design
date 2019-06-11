@@ -35,15 +35,19 @@ __Level 1__: The first level begins with an introduction to one of the bosses wh
 the user in between objects from his own world. The player’s goal is to successfully
 jump across to the other platform, dodge other cube-shaped creatures, and pass
 through the door to go on to level 2. This is the boss’ first test where enemies are not
-firing any objects to the player and the player simply has to dodge them. <br />
+firing any objects to the player and the player simply has to dodge them.
+<img width="767" alt="Screen Shot 2019-06-07 at 6 55 29 PM" src="https://user-images.githubusercontent.com/22971646/59312146-dcc29700-8c60-11e9-8fb1-a38ad94049d3.png">
+<br />
 __Level 2__: In this level the villains which are the triangles have taken over the park. Some
 triangles are stuck in trees trying to kill the player by shooting at them. Others are
 patrolling areas to make sure that the player cannot get the key and proceed to the next
-level. Finally by the key there are hybrid enemies which both shoot and patrol. <br />
+level. Finally by the key there are hybrid enemies which both shoot and patrol.
+![Screen Shot 2019-06-07 at 6 40 09 PM](https://user-images.githubusercontent.com/22971646/59312148-dfbd8780-8c60-11e9-809a-ad9e6782fb21.png)<br />
 __Level 3__: In this level, cubes randomly spawn around the ball as it moves, making it more
 difficult to get past the obstacles. Twenty hearts have been dispersed all throughout the
 scene. The ball must collect all of the hearts in order to move onto the next level. There
-are also a few jewels that the user can pick up, which should give the ball a powerup. <br />
+are also a few jewels that the user can pick up, which should give the ball a powerup. 
+<img width="455" alt="Screen Shot 2019-06-07 at 6 57 22 PM" src="https://user-images.githubusercontent.com/22971646/59312153-e21fe180-8c60-11e9-8df7-aa6ba5acdc74.png"><br />
 __Level 4__: This level consists of 4 sections. In the unity scene, they are labeled as
 “beginning room”, “second room”, “third room”, and the rest of the objects in the scene
 are outside of those sections. In the first room, you are shown the powerups that you
@@ -52,14 +56,20 @@ approach a certain hitbox, a door opens and you start by dodging projectiles, th
 moving through some tubes, and going off of a ramp. Next the character jumps over
 some lava as to not die and go up some ramps above lava as well. The last obstacle
 requires the player to dodge electricity poles to reach the door that leads to the next
-level. <br />
+level. 
+<img width="503" alt="Screen Shot 2019-06-07 at 6 58 29 PM" src="https://user-images.githubusercontent.com/22971646/59312415-eac4e780-8c61-11e9-81a8-7f9fdac60a80.png">
+<br />
 __Level 5__: This level consist of three scenes: the entrance to the main stage, the main
 stage, and the entrance to the boss fight. The two entrance main purpose was to
 transition the theme of the level to what was coming next in the scene. The main stage
 has a variety of platforms and dynamic obstacles to give the players an immersive
 experience. This level has the most amounts of obstacles and enemies in order to give
 the players a difficult, yet enjoyable experience. Checkpoints are provided within the
-game so the players do not get too frustrated when they respawn. <br />
+game so the players do not get too frustrated when they respawn. 
+<img width="433" alt="Screen Shot 2019-06-07 at 6 34 19 PM" src="https://user-images.githubusercontent.com/22971646/59312162-f1069400-8c60-11e9-9ffc-ab520105aa19.png">
+<img width="544" alt="Screen Shot 2019-06-07 at 6 36 57 PM" src="https://user-images.githubusercontent.com/22971646/59312168-f532b180-8c60-11e9-89fe-f8dbd75db562.png">
+<img width="278" alt="Screen Shot 2019-06-07 at 6 41 39 PM" src="https://user-images.githubusercontent.com/22971646/59312175-fa8ffc00-8c60-11e9-889c-76fac36fbd45.png">
+<br />
 
 
 __Level 5-1 (Entrance 1)__ <br />
