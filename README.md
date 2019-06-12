@@ -7,7 +7,7 @@
 * Sabrina Chen @schen091
 
 ## Video Demo Link
-https://youtu.be/utbGed9lw
+https://youtu.be/utbGed9lw78
 ## Overview
 You, the user as a human, are summoned into another dimension where you transform
 into a ball, becoming a member of the Bola society. A great catastrophe occurs in which
@@ -111,6 +111,7 @@ the game using WASD or arrow keys.
 ball at all times.
 
 We also have scripts specific to each level.
+
 __Level 1__:
 * __enemyCube.cs__ ​is attached to the player where if the player touches any enemy
 cubes, the player restarts that level
